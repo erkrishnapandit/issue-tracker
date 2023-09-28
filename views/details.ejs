@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    <!-- all stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/details.css">
+</head>
+
+<body>
+
+    <!-- header of details page -->
+    <header id="details-header">
+        <h1>Project Details</h1>
+        <p>
+            <span>Title:</span>
+            <%=project.name%>
+                <small> <em style="font-family:cursive">(Author:<%=project.author%>)</em></small>
+        </p>
+        <p>
+            <span>Description:</span>
+            <%=project.description%>
+        </p>
+
+        <nav id="header-btn">
+            <a href="./create-issue/<%= project.id %>">Create Issue</a>
+            <a href="/">Go Back</a>
+        </nav>
+    </header>
+
+    <!-- search issue section in details page -->
+    <section id="search-issues">
+        <h2>List of Issues</h2>
+        <hr>
+        <div id="search-inputs-and-btn-container">
+            <form id="search-by-title-or-label" class="input-container" data-projectId="<%= project.id%>">
+                <input type="text" name="search" placeholder="Search by title or label" required>
+                <button type="submit">Search</button>
+            </form>
+            <form id="search-by-author" class="input-container" data-projectId="<%= project.id%>">
+
+                <select name="author" id="" required>
+                    <% for(let i=0;i<authors.length;i++){ %>
+                        <option value="<%= authors[i]%>">
+                            <%= authors[i] %>
+                        </option>
+                        <%}%>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+            <form id="clear-filter" class="input-container" data-projectId="<%= project.id%>">
+                <!-- <input type="text" name="" placeholder="search by author"> -->
+                <button type="submit">Clear Filter</button>
+            </form>
+        </div>
+        <hr>
+    </section>
+
+    <!-- issues table section in details page -->
+    <section id="issues-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Author</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+
+                <%if(issues.length===0){%>
+                    <tr>
+                        <td colspan='4' style="text-align:center">No issue found!, Added issue display here..</td>
+                    </tr>
+                    <%}%>
+                        <!-- iterate over issues -->
+                        <% for(let i=issues.length-1;i>=0;i--){ %>
+                            <tr>
+                                <td>
+                                    <%= issues[i].title %>
+                                </td>
+                                <td>
+                                    <%= issues[i].description %>
+                                </td>
+                                <td>
+                                    <%= issues[i].author %>
+                                </td>
+                                <td class="open">Open</td>
+                            </tr>
+                            <% } %>
+            </tbody>
+            <!-- <tfoot>
+                <tr>
+                    <td colspan="4">copyright &copy; </td>
+                </tr>
+            </tfoot> -->
+        </table>
+    </section>
+
+    <!-- create issue form in details page -->
+    <!-- ../  current(location) url path one path back -->
+
+    <!-- all scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/js/details.js"></script>
+</body>
+
+</html>

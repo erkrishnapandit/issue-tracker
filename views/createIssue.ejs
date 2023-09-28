@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Issue</title>
+    <!-- add stylesheet -->
+    <link href="/assets/css/createProject.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- go back btn -->
+    <div id="go-back">
+        <a href="/details/<%= projectId%>" title="go back to details page">Go Back</a>
+    </div>
+
+    <!-- create project form html code -->
+    <form id="create-project-form" action="./create/<%= projectId%>" method="post">
+        <div>
+            <h1>CREATE ISSUE</h1>
+        </div>
+
+        <div>
+            <div>
+                <input type="text" name="title" placeholder="Title" required>
+            </div>
+
+            <div>
+                <input type="text" name="description" placeholder="Description" required>
+            </div>
+
+            <div>
+                <input type="text" name="labels" placeholder="Enter labels more than one separated by comas" required>
+            </div>
+
+            <div>
+                <input type="text" name="author" placeholder="Author Name" required>
+            </div>
+
+            <div id="create-project-form-btn">
+                <button type="submit"> Create Issue</button>
+                <button type="reset"> Reset</button>
+            </div>
+    </form>
+
+</body>
+
+</html>
