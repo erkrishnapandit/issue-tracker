@@ -18,6 +18,12 @@ height: 30%;
 padding: 10px;
 }
 
+#app h1 {
+    background: gray;
+    padding:10px;
+    color: rgb(255, 255, 255);
+}
+
 header h1{
     padding: 10px 20px;
 }

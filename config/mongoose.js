@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // Setting Up Database
-mongoose.connect('mongodb://127.0.0.1:27017/ISSUE_TRACKER').then((result) => {
+mongoose.connect('mongodb://127.0.0.1:27017/ISSUE_TRACKER_DEVELOPMENT').then((result) => {
     console.log('Successfully Connected To The Database')
 }).catch((err) => {
     console.log("Couldn't Connetc To The Database", err);

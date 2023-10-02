@@ -2,14 +2,13 @@
 const Projects = require('../models/projectSchema');
 
 // Creating home controller
-exports.home = function (req, res) {
-  Projects.find({}, (err, projects) => {// return array of document(project)
-    if (err) {
-      console.log('err', err);
-      return;
-    }
+exports.home = async function (req, res) {
+  try {
+    const projects = await Projects.find({});
     res.render('home', { projects: projects });
-  });
+  } catch (error) {
+    console.log("Error in finding projects from database", error);
+  }
 }
 
 // creating project controller
@@ -42,7 +41,7 @@ module.exports.details = async (req, res) => {
 
     // Error handling
   } catch (error) {
-    return console.log("Error while creating details page controller", error);
+    console.log("Error while creating details page controller", error);
   }
 
 }

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <!-- add stylesheet -->
-  <link href="/assets/css/home.css" rel="stylesheet" type="text/css">
+  <link href="/css/home.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -15,8 +15,10 @@
     <!-- app heading and subheading -->
     <div id="heading-and-list-of-projects">
       <h1>Issue Tracker</h1>
-      <hr>
-      <h2>list of projects</h2>
+      <!-- create project form and button html code -->
+      <div class="creat-project-btn-container">
+        <a href="/create-project" id="create-project-btn">Create Project</a>
+      </div>
 
       <!-- list of projects -->
       <%if(locals.projects.length !==0){%>
@@ -32,19 +34,13 @@
               <a href="./details/<%= projects[i].id%>">Details</a>
             </li>
             <% } %>
-
         </ul>
         <%}else{%>
-          <h3 style="padding: 20px;margin-top: 50px;font-family: cursive;">No Project is present in our database...</h3>
+          <h3 style="padding: 20px; margin-top: 50px;font-family: cursive;">Add New Project To Display Here
+          </h3>
           <%}%>
     </div>
-
-    <!-- create project form and button html code -->
-    <div id="create-project-form-and-btn">
-      <a href="/create-project" id="create-project-btn">Create Project</a>
-    </div>
   </div>
-
 </body>
 
 </html>

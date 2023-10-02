@@ -37,7 +37,7 @@ module.exports.searchByTitleOrLabel = async (req, res) => {
 
         // Error Handling
     } catch (error) {
-        return console.log('Error while search by title or label controller', error);
+        console.log('Error while search by title or label controller', error);
 
     }
 }

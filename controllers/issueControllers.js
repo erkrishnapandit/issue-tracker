@@ -37,9 +37,6 @@ module.exports.createIssue = async (req, res) => {
 
         res.redirect(`/details/${projectId}`);
     } catch (err) {
-        if (err) {
             console.log("Error while creating issue controller", err);
-            return;
-        }
     }
 }
