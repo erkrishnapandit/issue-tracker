@@ -17,7 +17,7 @@
       <h1>Issue Tracker</h1>
       <!-- create project form and button html code -->
       <div class="creat-project-btn-container">
-        <a href="/create-project" id="create-project-btn">Create Project</a>
+        <a href="/create-project" id="create-project-btn">Add New Project</a>
       </div>
 
       <!-- list of projects -->
@@ -31,7 +31,7 @@
                     <medium>(<%= projects[i].author%>)</medium>
                 </p>
               </div>
-              <a href="./details/<%= projects[i].id%>">Details</a>
+              <a href="./details/<%= projects[i].id%>">Get Details</a>
             </li>
             <% } %>
         </ul>

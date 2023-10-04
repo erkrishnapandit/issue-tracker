@@ -13,51 +13,53 @@
 
     <h1>Issue Tracker</h1>
     <!-- header of details page -->
-    <header id="details-header">
-        <h2>Project Details</h2>
-        <p>
-            <span>Title:</span>
-            <%=project.name%>
-                <small> <em style="font-family:cursive">(Author:<%=project.author%>)</em></small>
-        </p>
-        <p>
-            <span>Description:</span>
-            <%=project.description%>
-        </p>
 
-        <nav id="header-btn">
-            <a href="./create-issue/<%= project.id %>">Create Issue</a>
-            <a href="/">Go Back</a>
-        </nav>
-    </header>
+    <nav id="header-btn">
+        <a href="/">Go Back</a>
+        <header id="details-header">
+            <h2>Project Details</h2>
+            <p>
+                <span>Title:</span>
+                <%=project.name%>
+                    <small> <em>(Author: <%=project.author%>)</em></small>
+            </p>
+            <p>
+                <span>Description:</span>
+                <%=project.description%>
+            </p>
 
-    <!-- search issue section in details page -->
+        </header>
+        <a href="./create-issue/<%= project.id %>">Create Issue</a>
+    </nav>
+    <hr>
     <section id="search-issues">
-        <h2>List of Issues</h2>
-        <hr>
-        <div id="search-inputs-and-btn-container">
-            <form id="search-by-title-or-label" class="input-container" data-projectId="<%= project.id%>">
-                <input type="text" name="search" placeholder="Search by title or label" required>
-                <button type="submit">Search</button>
-            </form>
-            <form id="search-by-author" class="input-container" data-projectId="<%= project.id%>">
 
-                <select name="author" id="" required>
-                    <% for(let i=0;i<authors.length;i++){ %>
-                        <option value="<%= authors[i]%>">
-                            <%= authors[i] %>
-                        </option>
-                        <%}%>
-                </select>
-                <button type="submit">Search</button>
-            </form>
-            <form id="clear-filter" class="input-container" data-projectId="<%= project.id%>">
-                <!-- <input type="text" name="" placeholder="search by author"> -->
-                <button type="submit">Clear Filter</button>
-            </form>
+        <div id="search-inputs-and-btn-container">
+         
+                <form id="search-by-title-or-label" class="input-container" data-projectId="<%= project.id%>">
+                    <input type="text" name="search" placeholder="Search by title or label name" required>
+                    <button type="submit">Search</button>
+                </form>
+                <form id="search-by-author" class="input-container" data-projectId="<%= project.id%>">
+                    <select name="author" id="" required>
+                        <% for(let i=0;i<authors.length;i++){ %>
+                            <option value="<%= authors[i]%>">
+                                <%= authors[i] %>
+                            </option>
+                            <%}%>
+                    </select>
+                    <button type="submit">Search</button>
+                </form>
+           
+           
+                <form id="clear-filter" class="input-container" data-projectId="<%= project.id%>">
+                    <!-- <input type="text" name="" placeholder="search by author"> -->
+                    <button type="submit">Clear Filter</button>
+                </form>
+           
         </div>
-        <hr>
     </section>
+    <hr>
 
     <!-- issues table section in details page -->
     <section id="issues-table">
@@ -71,7 +73,6 @@
                 </tr>
             </thead>
             <tbody id="table-body">
-
                 <%if(issues.length===0){%>
                     <tr>
                         <td colspan='4' style="text-align:center">No issue found!, Added issue display here..</td>
