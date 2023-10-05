@@ -12,6 +12,7 @@ h1 {
     color: black;
     border-radius: 5px;
 }
+
 #go-back a{
     z-index: 1;
     position: fixed;
@@ -37,7 +38,6 @@ h1 {
     /* background-color: rgb(185, 182, 0); */
     box-shadow: 0 0 3px 3px rgb(251, 253, 255);
 }
-
 
  /* create form */
  #create-project-form{
