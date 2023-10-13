@@ -41,10 +41,6 @@ nav a {
     height: 40px;
 }
 
-/* .details-header p{
-    font-size: xx-large;
-} */
-
 header h1 {
     padding: 10px 20px;
 }
@@ -83,7 +79,7 @@ header p small {
 
 #header-btn a:hover {
     background:#e37e12;
-    /* border-bottom: 4px solid rgb(255, 255, 252); */
+    
 }
 
 /*search issue section */
@@ -111,7 +107,6 @@ header p small {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .input-container input,
@@ -151,7 +146,6 @@ header p small {
 #clear-filter button:hover {
     background-color: rgb(201, 21, 21);
 }
-
 
 /* issue table section */
 #issues-table {

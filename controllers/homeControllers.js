@@ -24,7 +24,7 @@ module.exports.details = async (req, res) => {
     const project = await Projects.findById(id).populate('issues');//populate, fill issue array with document related to dave id of issue
 
     // find authors
-    console.log(project, project?.issues);
+    // console.log(project, project?.issues);
     const issues = project?.issues;
     const authors = [];
     for (let i = 0; i < issues?.length; i++) {
